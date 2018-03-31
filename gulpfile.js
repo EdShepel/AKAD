@@ -23,16 +23,19 @@ var paths= {
 		images: "src/img/**/*.*"
 	},
 	dest: {
-		css: "dest/css/",
-		html: "dest/",
-		images: "dest/img/",
-		js: "dest/js/"
+		css: "docs/css/",
+		html: "docs/",
+		images: "docs/img/",
+		js: "docs/js/",
+		fonts: "docs/fonts/"
 	},
 	watch: {
 		css: "src/css/**/*.scss",
 		html: "src/**/*.html",
 		images: "src/img/**/*.*",
-		js: "src/**/*.js"
+		js: "src/**/*.js",
+		fonts: "docs/fonts/"
+
 	},
 	bootstrap: './node_modules/bootstrap/dist/js/',
 	jquery: './node_modules/jquery/dist/',
@@ -77,7 +80,11 @@ gulp.task('images', function () {
 		.pipe(gulp.dest(paths.dest.images))
 		.pipe(reload({stream: true}));
 });
-
+gulp.task('fonts', function(){
+	gulp.src(paths.src.fonts)
+		.pipe(gulp.dest(paths.dest.fonts))
+		.pipe(reload({stream: true}));
+});
 gulp.task('js', function () {
 	gulp.src(paths.src.js_main)
 		.pipe(include({
@@ -121,12 +128,15 @@ gulp.task('watch', function() {
 	gulp.watch([paths.watch.js], function(event, cb){
 		gulp.start('js');
 	});
+	gulp.watch([paths.watch.fonts], function(event, cb){
+		gulp.start('fonts');
+	});
 });
 
 gulp.task('refresh', function(){
 	browserSync({
 		server: {
-			baseDir: './dest'
+			baseDir: './docs'
 		},
 		injectChanges: true
 	});
@@ -136,7 +146,8 @@ gulp.task('build', [
 	'html', 
 	'css',
 	'images',
-	'js'
+	'js',
+	'fonts'
 ]);
 
 gulp.task('default', ['build', 'refresh', 'watch']);

@@ -1,0 +1,42 @@
+.team{
+	background: url(../img/bg-gss.png);
+	padding:  90px 0;
+	&__slider{
+
+	}
+	&__slide{
+	 	h2{
+	 		color: #ffffff;
+			font-family: "Open Sans";
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 23.84px;
+			text-transform: uppercase;
+			text-align: center;
+	 	}
+	 	p{
+			color: #ffffff;
+			font-family: 'Lato';
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28px;
+			text-align: center;
+	 	}
+	 	img{
+	 		text-align: center;
+	 		margin-top: 10px;
+	 		margin-left: 44%;
+	 	}
+	 	span{
+	 		color: #ffffff;
+			font-family: 'Lato';
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 28px;
+			text-transform: uppercase;
+			text-align: center;
+			display: inherit;
+			margin: 30px 0;
+	 	}
+	}
+}

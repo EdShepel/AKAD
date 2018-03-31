@@ -1,0 +1,28 @@
+.products{
+	background: url(../img/products-bg.png);
+	background-size: cover;
+	height: 650px;
+	&__main{
+ 		padding-top: 200px;
+		h2{
+			color: #ffffff;
+			font-family: "Open Sans", sans-serif;
+			font-size: 48px;
+			font-weight: 600;
+			line-height: 23.84px;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+			text-align: center;
+
+		}
+		p{
+			text-align: center;
+			color: #ffffff;
+			font-family: "Open Sans", sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 24.02px;
+
+		}
+	}
+}
